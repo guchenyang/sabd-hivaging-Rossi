@@ -279,6 +279,25 @@ summary(fit)
 #hiv.x:age.grp50   0.6237     0.5508   1.132   0.2610    
 #hiv.x:age.grp60   0.9524     0.8493   1.121   0.2655    
 
+## Uncorrected
+fit <- lm(np.domain.ds.learn.x ~ hiv.x*age.x, data=dall)
+summary(fit)
+##            Estimate Std. Error t value Pr(>|t|)    
+##(Intercept)  5.08340    1.38709   3.665 0.000444 ***
+##hiv.x       -3.45034    1.89770  -1.818 0.072781 .  
+##age.x       -0.07603    0.02572  -2.957 0.004088 ** 
+##hiv.x:age.x  0.06528    0.03658   1.784 0.078135 .  
+
+fit <- lm(np.domain.ds.learn.x ~ hiv.x*age.grp, data=dall)
+summary(fit)
+##                Estimate Std. Error t value Pr(>|t|)    
+##(Intercept)       2.2000     0.3644   6.038 4.98e-08 ***
+##hiv.x            -0.9241     0.4226  -2.187  0.03174 *  
+##age.grp50        -1.6231     0.4847  -3.349  0.00125 ** 
+##age.grp60        -1.9857     0.5678  -3.497  0.00078 ***
+##hiv.x:age.grp50   1.2790     0.5840   2.190  0.03150 *  
+##hiv.x:age.grp60   1.3765     0.9004   1.529  0.13038    
+
 
 ## ### np.domain.ds.mem ###
 ##3 age groups, before AIC:
@@ -289,6 +308,24 @@ summary(fit)
 ##hiv.x       -1.28581    1.87281  -0.687   0.4943  
 ##age.x       -0.02683    0.02538  -1.057   0.2936  
 ##hiv.x:age.x  0.02006    0.03610   0.556   0.5799   
+
+fit <- lm(np.domain.ds.mem.x ~ hiv.x*age.x, data=dall)
+summary(fit)
+##            Estimate Std. Error t value Pr(>|t|)   
+##(Intercept)  4.10564    1.48188   2.771  0.00696 **
+##hiv.x       -2.30961    2.02738  -1.139  0.25801   
+##age.x       -0.05924    0.02747  -2.156  0.03407 * 
+##hiv.x:age.x  0.04612    0.03908   1.180  0.24140   
+
+fit <- lm(np.domain.ds.mem.x ~ hiv.x*age.grp, data=dall)
+summary(fit)
+##                Estimate Std. Error t value Pr(>|t|)    
+##(Intercept)       1.8000     0.3958   4.548 1.96e-05 ***
+##hiv.x            -0.4207     0.4590  -0.917  0.36219    
+##age.grp50        -1.0692     0.5264  -2.031  0.04566 *  
+##age.grp60        -1.6571     0.6168  -2.687  0.00881 ** 
+##hiv.x:age.grp50   0.5536     0.6343   0.873  0.38552    
+##hiv.x:age.grp60   1.2778     0.9781   1.307  0.19522   
 
 
 ## ### np.domain.ds.motor ###
@@ -301,6 +338,14 @@ summary(fit)
 ##age.x        0.0001742  0.0189080   0.009    0.993
 ##hiv.x:age.x  0.0058979  0.0268935   0.219    0.827 
 
+fit <- lm(np.domain.ds.motor.x ~ hiv.x*age.x, data=dall)
+summary(fit)
+##             Estimate Std. Error t value Pr(>|t|)
+##(Intercept)  0.294334   1.025101   0.287    0.775
+##hiv.x       -0.182304   1.402394  -0.130    0.897
+##age.x        0.003539   0.019007   0.186    0.853
+##hiv.x:age.x  0.003191   0.027034   0.118    0.906
+
 
 ## ### np.domain.ds.speed ###
 ##3 age groups, before AIC:
@@ -311,6 +356,15 @@ summary(fit)
 ##hiv.x       -0.585448   0.728536  -0.804    0.424
 ##age.x       -0.004122   0.009873  -0.417    0.677
 ##hiv.x:age.x  0.013861   0.014044   0.987    0.327
+
+fit <- lm(np.domain.ds.speed.x ~ hiv.x*age.x, data=dall)
+summary(fit)
+##             Estimate Std. Error t value Pr(>|t|)
+##(Intercept)  0.586028   0.527817   1.110    0.270
+##hiv.x       -0.736939   0.722112  -1.021    0.311
+##age.x       -0.008918   0.009786  -0.911    0.365
+##hiv.x:age.x  0.017718   0.013920   1.273    0.207
+
 
 
 ## ### np.domain.ds.verbal ###
@@ -323,6 +377,14 @@ summary(fit)
 ##age.x       -0.004243   0.008987  -0.472    0.638
 ##hiv.x:age.x -0.005072   0.012817  -0.396    0.693
 
+fit <- lm(np.domain.ds.verbal.x ~ hiv.x*age.x, data=dall)
+summary(fit)
+##             Estimate Std. Error t value Pr(>|t|)
+##(Intercept)  0.707518   0.499910   1.415    0.161
+##hiv.x       -0.021390   0.685051  -0.031    0.975
+##age.x       -0.008589   0.009269  -0.927    0.357
+##hiv.x:age.x -0.001501   0.013218  -0.114    0.910
+
 
 ## ### np.global.gds ###
 ##3 age groups, before AIC:
@@ -333,6 +395,24 @@ summary(fit)
 ##hiv.x       -0.748882   0.705396  -1.062   0.2916  
 ##age.x       -0.014265   0.009559  -1.492   0.1396  
 ##hiv.x:age.x  0.012837   0.013598   0.944   0.3480 
+
+fit <- lm(np.global.gds.x ~ hiv.x*age.x, data=dall)
+summary(fit)
+##            Estimate Std. Error t value Pr(>|t|)   
+##(Intercept)  1.79739    0.54647   3.289   0.0015 **
+##hiv.x       -1.09690    0.74764  -1.467   0.1463   
+##age.x       -0.02528    0.01013  -2.495   0.0146 * 
+##hiv.x:age.x  0.02170    0.01441   1.505   0.1362   
+
+fit <- lm(np.global.gds.x ~ hiv.x*age.grp, data=dall)
+summary(fit)
+##                Estimate Std. Error t value Pr(>|t|)    
+##(Intercept)       0.7920     0.1459   5.430 6.18e-07 ***
+##hiv.x            -0.1730     0.1691  -1.023  0.30945    
+##age.grp50        -0.4497     0.1940  -2.318  0.02307 *  
+##age.grp60        -0.6277     0.2273  -2.762  0.00717 ** 
+##hiv.x:age.grp50   0.2294     0.2338   0.981  0.32952    
+##hiv.x:age.grp60   0.5221     0.3604   1.449  0.15148   
 
 
 ## ### np.exec.stroop_cw ###
@@ -596,8 +676,306 @@ summary(fit)
 
 
 
+################################################################
+## # Focus on 1st visit #
+################################################################
+d1 <- d[d$visit==0, ]                  
+
+##Separate into 3 age groups: 40-49, 50-59, and 60+, with group sizes
+##40-49: 39; 50-59: 35; 60+: 10
+##Use groups instead of numeric values of age
+d1$age.grp <- NA
+d1$age.grp[dd$age>=40] <- "40"
+d1$age.grp[dd$age>=50] <- "50"
+d1$age.grp[dd$age>=60] <- "60"
+d1$age.grp <- factor(d1$age.grp)
 
 
+##Separate into 2 age groups: 40-55, and 55+, with group sizes
+##40-49: 39; 50-59: 35; 60+: 10
+##Use groups instead of numeric values of age
+d1$age.grp55 <- NA
+d1$age.grp55[d1$age>=40] <- "40"
+d1$age.grp55[d1$age>=55] <- "55"
+d1$age.grp55 <- factor(d1$age.grp55)       
+
+
+##Univaraite approaches to yield easier interpretation
+
+##Add clinical information: duration, CD4, CD4 Nadir, HCV, HIV/RAV4, CART
+dc <- read.csv("AgeEffectsMASTER031212.csv", sep=";")      
+sel <- c(1,2,13:22)
+dc <- data.frame(dc[,sel])                                 
+# dc[1,]
+#  ID Visit HIVduration HIVRNA_Detectable HIVRNA_value CD4current CD4nadir HAART ARV cART HCVlifetime HCVcurrent
+#  1     0          22                 0            0        394      201     1   1    1           1          1
+
+dc1 <- dc[dc$Visit==0,]         
+names(dc1)[1] <- "id"
+################ merge all together, non-hiv=2, hiv>100 = 1, hiv<100 = 0
+dalll <- merge(d1, dc1, by=("id"))    
+dalll$CD4current100 <-  1*(dalll$CD4current >= 100) + 2*(dalll$hiv == 0)
+dalll$CD4nadir100 <-  1*(dalll$CD4nadir >= 100) + 2*(dalll$hiv == 0)
+  
+
+##Dictomize age by 55 age cut-off
+dalll$age.grp2 <- 0 
+dalll$age.grp2[dalll$age>=55] <- 1
+
+##Tranform age  by logarithm
+dalll$age.log <- log(dalll$age)
+
+##Tranform age  by square
+dalll$age.sq <- (dalll$age)^2
+
+
+## source CorrectFunctions
+source("/Users/Chenyang/Desktop/CorrectingFunctions.R")
+##Long format: correct for age, sex, education for non-HIV, 
+##Correction for all clinical variables and demographical variables, at baseline
+aa <- data.frame(as.matrix(dalll[,c(grp.add)]))
+for (jj in 1:ncol(aa)) {
+  
+  sel <- dalll$hiv==0  
+  ## correcting for education only, and apply the same correction to the second visit.  
+  tmp <- correctEffect(aa[sel, jj], data.frame(education=dalll[sel,]$education), data.frame(education=13))
+  aa[sel, jj] <- tmp$ce
+  
+  ##correct for hiv by the same formula
+  sel <- dalll$hiv==1 
+  rr <- applyCorrect(tmp$fit, aa[sel, jj], data.frame(education=dalll[sel,]$education), data.frame(education=13))
+  aa[sel, jj] <- rr
+  
+}
+
+names(aa) <- paste(names(aa), "C", sep="")
+dalll <- cbind(dalll, aa)
+
+dalll$age2 <- (dalll$age)^2 
+
+uid <- dalll$id
+dalll$age.grp <-  NA
+for (jjj in uid) {
+  sel <- dalll$id == jjj
+  age <- min(dalll$age[sel])
+  if (age <50) {
+    dalll$age.grp[sel] <- "40"
+  } else if (age>=50 && age<60 ) {
+    dalll$age.grp[sel] <- "50"
+  } else {
+    dalll$age.grp[sel] <- "60"
+  }
+}
+dalll$age.grp <- factor(dalll$age.grp)   
+
+
+################################################################
+##  #Baseline Analysis
+################################################################
+## ## MANOVA ##
+##Baseline:
+##Without Age.sq
+fit <- manova(as.matrix(dalll[,53:60])~hiv*age, data=dalll)
+summary(fit, test="Wilks")
+
+## ## HIV Positive vs Negative, Univariate ##
+
+## ### np.domain.ds.attwmexec ###
+##3 age groups, before AIC:
+fit <- lm(np.domain.ds.attwmexecC ~ hiv*age, data=dalll)
+summary(fit)
+##              Estimate Std. Error t value Pr(>|t|)  
+##(Intercept)  0.5207222  0.3109987   1.674   0.0965 .
+##hiv          0.0206206  0.4445649   0.046   0.9631  
+##age         -0.0062585  0.0058896  -1.063   0.2900 
+##hiv:age     -0.0007752  0.0087201  -0.089   0.9293    
+
+## Uncorrected
+fit <- lm(np.domain.ds.attwmexec ~ hiv*age, data=dalll)
+summary(fit)
+##             Estimate Std. Error t value Pr(>|t|)  
+##(Intercept)  0.688818   0.314408   2.191   0.0303 *
+##hiv         -0.080495   0.449438  -0.179   0.8581  
+##age         -0.009902   0.005954  -1.663   0.0988 .
+##hiv:age      0.001732   0.008816   0.196   0.8446  
+
+
+
+## ### np.domain.ds.learn ###
+##3 age groups, before AIC:
+fit <- lm(np.domain.ds.learnC ~ hiv*age, data=dalll)
+summary(fit)
+##            Estimate Std. Error t value Pr(>|t|)   
+##(Intercept)  3.13294    1.04800   2.989  0.00336 **
+##hiv         -1.57644    1.49809  -1.052  0.29466   
+##age         -0.03066    0.01985  -1.545  0.12485   
+##hiv:age      0.02350    0.02938   0.800  0.42544  
+
+## 3 age groups, hiv.x*age.grp
+fit <- lm(np.domain.ds.learnC ~ hiv*age.grp, data=dalll)
+summary(fit)
+##              Estimate Std. Error t value Pr(>|t|)    
+##(Intercept)     1.9667     0.2756   7.137 6.87e-11 ***
+##hiv            -0.6878     0.3280  -2.097   0.0380 *  
+##age.grp50      -0.6715     0.4066  -1.652   0.1011    
+##age.grp60      -0.9199     0.4947  -1.860   0.0653 .  
+##hiv:age.grp50   0.5431     0.4929   1.102   0.2726    
+##hiv:age.grp60   0.4151     0.8100   0.513   0.6092    
+
+## Uncorrected
+fit <- lm(np.domain.ds.learn ~ hiv*age, data=dalll)
+summary(fit)
+##            Estimate Std. Error t value Pr(>|t|)    
+##(Intercept)  4.63302    1.14490   4.047 8.97e-05 ***
+##hiv         -2.47880    1.63660  -1.515  0.13236    
+##age         -0.06318    0.02168  -2.914  0.00422 ** 
+##hiv:age      0.04587    0.03210   1.429  0.15551  
+
+fit <- lm(np.domain.ds.learn ~ hiv*age.grp, data=dalll)
+summary(fit)
+##              Estimate Std. Error t value Pr(>|t|)    
+##(Intercept)     2.1750     0.2956   7.359 2.16e-11 ***
+##hiv            -0.7271     0.3518  -2.067  0.04081 *  
+##age.grp50      -1.2926     0.4360  -2.965  0.00363 ** 
+##age.grp60      -1.7861     0.5305  -3.367  0.00101 ** 
+##hiv:age.grp50   1.0417     0.5286   1.971  0.05099 .  
+##hiv:age.grp60   0.8382     0.8687   0.965  0.33646    
+
+
+
+## ### np.domain.ds.mem ###
+##3 age groups, before AIC:
+fit <- lm(np.domain.ds.memC ~ hiv*age, data=dalll)
+summary(fit)
+##             Estimate Std. Error t value Pr(>|t|)
+##(Intercept)  1.521279   1.083825   1.404    0.163
+##hiv          0.040084   1.549300   0.026    0.979
+##age         -0.004456   0.020525  -0.217    0.828
+##hiv:age     -0.001029   0.030389  -0.034    0.973 
+
+fit <- lm(np.domain.ds.mem ~ hiv*age, data=dalll)
+summary(fit)
+##            Estimate Std. Error t value Pr(>|t|)  
+##(Intercept)  2.77303    1.16849   2.373   0.0191 *
+##hiv         -0.71289    1.67032  -0.427   0.6702  
+##age         -0.03159    0.02213  -1.427   0.1559  
+##hiv:age      0.01764    0.03276   0.538   0.5913 
+
+fit <- lm(np.domain.ds.mem ~ hiv*age.grp, data=dalll)
+summary(fit)
+##              Estimate Std. Error t value Pr(>|t|)    
+##(Intercept)     1.6750     0.3040   5.509 1.97e-07 ***
+##hiv            -0.1438     0.3619  -0.397   0.6919    
+##age.grp50      -0.8515     0.4486  -1.898   0.0600 .  
+##age.grp60      -1.1750     0.5458  -2.153   0.0332 *  
+##hiv:age.grp50   0.5475     0.5438   1.007   0.3160    
+##hiv:age.grp60   0.3938     0.8936   0.441   0.6603   
+
+
+## ### np.domain.ds.motor ###
+##3 age groups, before AIC:
+fit <- lm(np.domain.ds.motorC ~ hiv*age, data=dalll)
+summary(fit)
+##             Estimate Std. Error t value Pr(>|t|)
+##(Intercept)  0.295660   0.889696   0.332    0.740
+##hiv          0.569242   1.271786   0.448    0.655
+##age          0.006846   0.016857   0.406    0.685
+##hiv:age     -0.012325   0.024952  -0.494    0.622
+
+fit <- lm(np.domain.ds.motor ~ hiv*age, data=dalll)
+summary(fit)
+##             Estimate Std. Error t value Pr(>|t|)
+##(Intercept)  0.262445   0.890136   0.295    0.769
+##hiv          0.589224   1.272416   0.463    0.644
+##age          0.007566   0.016866   0.449    0.654
+##hiv:age     -0.012821   0.024964  -0.514    0.608
+
+
+## ### np.domain.ds.speed ###
+##3 age groups, before AIC:
+fit <- lm(np.domain.ds.speedC ~ hiv*age, data=dalll)
+summary(fit)
+##             Estimate Std. Error t value Pr(>|t|)
+##(Intercept)  0.438333   0.388846   1.127    0.262
+##hiv         -0.255421   0.555846  -0.460    0.647
+##age         -0.005109   0.007364  -0.694    0.489
+##hiv:age      0.006835   0.010903   0.627    0.532
+
+fit <- lm(np.domain.ds.speed.x ~ hiv.x*age.x, data=dall)
+summary(fit)
+##             Estimate Std. Error t value Pr(>|t|)  
+##(Intercept)  0.657810   0.389415   1.689   0.0936 .
+##hiv         -0.387444   0.556660  -0.696   0.4877  
+##age         -0.009866   0.007375  -1.338   0.1833  
+##hiv:age      0.010108   0.010919   0.926   0.3563  
+
+
+
+## ### np.domain.ds.verbal ###
+##3 age groups, before AIC:
+fit <- lm(np.domain.ds.verbalC ~ hiv*age, data=dalll)
+summary(fit)
+##             Estimate Std. Error t value Pr(>|t|)  
+##(Intercept)  0.630363   0.339219   1.858   0.0655 .
+##hiv          0.011423   0.485581   0.024   0.9813  
+##age         -0.007064   0.006424  -1.100   0.2736  
+##hiv:age     -0.002422   0.009532  -0.254   0.7998  
+
+fit <- lm(np.domain.ds.verbal.x ~ hiv.x*age.x, data=dall)
+summary(fit)
+##              Estimate Std. Error t value Pr(>|t|)  
+##(Intercept)  0.7327231  0.3428429   2.137   0.0345 *
+##hiv         -0.0513381  0.4907683  -0.105   0.9169  
+##age         -0.0092831  0.0064927  -1.430   0.1553  
+##hiv:age     -0.0008668  0.0096334  -0.090   0.9285  
+
+
+## ### np.global.gds ###
+##3 age groups, before AIC:
+fit <- lm(np.global.gdsC ~ hiv*age, data=dalll)
+summary(fit)
+##             Estimate Std. Error t value Pr(>|t|)  
+##(Intercept)  1.035095   0.417280   2.481   0.0144 *
+##hiv         -0.188251   0.596492  -0.316   0.7528  
+##age         -0.007887   0.007902  -0.998   0.3202  
+##hiv:age      0.002349   0.011700   0.201   0.8412 
+
+fit <- lm(np.global.gds ~ hiv*age, data=dalll)
+summary(fit)
+##             Estimate Std. Error t value Pr(>|t|)    
+##(Intercept)  1.537797   0.443825   3.465 0.000724 ***
+##hiv         -0.490644   0.634436  -0.773 0.440750    
+##age         -0.018783   0.008405  -2.235 0.027185 *  
+##hiv:age      0.009847   0.012444   0.791 0.430270    
+
+fit <- lm(np.global.gds ~ hiv*age.grp, data=dalll)
+summary(fit)
+##              Estimate Std. Error t value Pr(>|t|)    
+##(Intercept)     0.8245     0.1144   7.204 4.84e-11 ***
+##hiv            -0.1151     0.1362  -0.845  0.39966    
+##age.grp50      -0.4239     0.1688  -2.511  0.01333 *  
+##age.grp60      -0.5456     0.2054  -2.656  0.00894 ** 
+##hiv:age.grp50   0.2027     0.2047   0.990  0.32395    
+##hiv:age.grp60   0.2412     0.3364   0.717  0.47463   
+
+
+## ### np.exec.stroop_cw ###
+##3 age groups, before AIC:
+fit <- lm(np.exec.stroop_cwC ~ hiv*age, data=dalll)
+summary(fit)
+##            Estimate Std. Error t value Pr(>|t|)    
+##(Intercept)  43.1086     8.2887   5.201 1.14e-06 ***
+##hiv         -10.8189    12.0232  -0.900    0.370    
+##age          -0.1471     0.1519  -0.968    0.335    
+##hiv:age       0.1535     0.2322   0.661    0.510   
+
+fit <- lm(np.exec.stroop_cw ~ hiv*age, data=dalll)
+summary(fit)
+##            Estimate Std. Error t value Pr(>|t|)    
+##(Intercept) 38.56872    8.71019   4.428 2.54e-05 ***
+##hiv         -9.32503   12.63456  -0.738    0.462    
+##age         -0.04107    0.15966  -0.257    0.798    
+##hiv:age      0.10352    0.24401   0.424    0.672    
 
 
 
